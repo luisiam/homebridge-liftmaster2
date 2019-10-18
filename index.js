@@ -243,7 +243,7 @@ LiftMasterPlatform.prototype.getDevice = function (callback) {
   }).then(function (res) {
     return res.json();
   }).then(function (data) {
-    if (data.ReturnCode === "0") {
+    if (data && data.ReturnCode === "0" && data.Devices) {
       var devices = data.Devices;
 
       // Look through the array of devices for all the gateways
